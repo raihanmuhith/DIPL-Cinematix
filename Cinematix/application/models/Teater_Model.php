@@ -25,7 +25,12 @@ class Teater_Model extends CI_model {
     public function deleteTeater($id)
     {
         $this->db->where('idTeater', $id);
+        $this->db->delete('studio');
+        $this->db->where('idTeater', $id);
+        $this->db->delete('jadwaltayang');
+        $this->db->where('idTeater', $id);
         $this->db->delete('teater');
     }
 
+	
 }
